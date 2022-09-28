@@ -10,6 +10,10 @@ body {
     background-color: cornsilk;
 }
 
+li{
+    margin: 15px;
+}
+
 .block {
     text-align: center;
     color: black;
