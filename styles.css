@@ -3,7 +3,9 @@
     color: #9e3c03;
     font-family: Raleway, Arial, Helvetica, sans-serif;
 }
-
+.item{
+  padding: 1%;
+}
 body {
     background-color: cornsilk;
 }
