@@ -26,7 +26,7 @@ res = 1; % residual
 i = 1; % initialize count
 x = zeros(nmax,1); % initialize vector of iterates
 x(1) = x0; % initial guess
-while (res>tol)&&(i <nmax)
+while (res>tol)&&(i < nmax)
     x(i+1) = x(i)-(f(x(i))/fp(x(i))); % Newton iterate
     res = abs(x(i+1)-x(i));
     i = i+1;
