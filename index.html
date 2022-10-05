@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Numerical Methods</title>
 </head>
 
@@ -120,6 +121,47 @@
                 
           </li>
     </ul>
-  </div>                   
+  </div> 
+    <div class="description">
+        <span class="description-header"><h3><u>MATLAB Codes</u></h3></span>
+        <ul>
+            <li>
+                <a href="#" style="background-color: #ccc; padding: 5px 10px;">bisection.m</a>
+                <div id="div1" style="background-color: #aaa; padding: 5px 10px; display:none; width:200px;">
+                 <pre>
+  <code>
+    function [r,iter] = bisection(f,a,b,tol,nmax)
+% by Shelvean Kapita, 2022
+% bisection algorithm for determining roots
+% example usage
+% f = @(x) x - cos(x);
+% a = 0;
+% b = 1;
+% tol = 1e-8;
+% nmax = 100;
+% [r,iter] = bisection(f,a,b,tol,nmax)
+
+iter = 1; % initialize count
+r = zeros(nmax,1); % initialize vector of iterates
+while ((b-a)/2>tol) && (iter < nmax)
+    c = (b+a)/2; % midpoint of [a,b]
+    r(iter) = c; % update iterate
+    if f(c)==0 % c is the solution!
+        break
+    elseif f(a)*f(c)<0
+        b = c;
+    else
+        a = c;
+    end
+    iter = iter + 1;
+end
+r = r(1:iter-1); % return iterates
+iter = iter-1;
+  </code>
+</pre>
+</div>
+
+            </li>
+        </ul>
 </body>
 </html>
