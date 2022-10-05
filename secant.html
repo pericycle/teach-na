@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<pre>
+  <code>
+function [r,iter] = secant(f,p0,p1,tol,nmax)
+% by Shelvean Kapita
+p = zeros(1,nmax);
+p(1) = p0;
+p(2) = p1;
+i = 2;
+res = 1;
+while (res>tol)&&(i < nmax)
+    p(i+1) = p(i)-f(p(i))*(p(i-1)-p(i))/(f(p(i-1))-f(p(i)));
+    res = abs(p(i+1)-p(i));
+    i = i+1;
+end
+r = p(1:i);
+iter = i;
+</code>
+</pre>
+</body>
+</html>

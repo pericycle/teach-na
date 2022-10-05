@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <pre>
+      <code>
+function q = gaussquad(f,a,b,n,m)
+% by Shelvean Kapita
+% Gaussian quadrature with m nodes per sub-interval
+% n: number of subintervals
+h = (b-a)/n;
+[x,w]=gauleg(m);
+k = 0:n;
+nds = a+k*h; % nodes
+q = 0;
+for j=1:n
+    aj = nds(j);
+    bj = nds(j+1);
+    xj = 0.5*(bj-aj)*x+0.5*(bj+aj);
+    wj = 0.5*(bj-aj)*w;
+    q = q + wj'*f(xj);
+end
+      </code>
+
+      </pre>
+  </body>
+</html>

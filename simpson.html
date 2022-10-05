@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <pre>
+      <code>
+function q = simpson(f,a,b,n)
+% by Shelvean Kapita
+assert(mod(n,2)==0,'n must be even!')
+% throw error if n is odd
+h = (b-a)/n;
+hs = h/3;
+q = hs*(f(a)+f(b));
+for k = 1:n-1
+    if mod(k,2)==1 % odd indices
+        q = q + 4*hs*f(a+k*h);
+    else
+        q = q + 2*hs*f(a+k*h); % even indices
+    end
+end
+
+      </code>
+      </pre>
+  </body>
+</html>

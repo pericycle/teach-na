@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <pre>
+      <code>
+function [x,iter,err] = jacobi(A,b,tol,nmax)
+% Jacobi iteration
+% A is strictly diagonally dominant
+n = size(A,1); % size of the matrix
+D = diag(diag(A)); % matrix of diagonal
+invD = diag(1./diag(A)); % inverse of diagonal matrix
+Q = A-D; % this is L+U
+i = 1; % iteration count
+res = 1; % residual
+x_old = zeros(n,1);
+err = zeros(nmax,1); % error vector
+while (res>tol) && (i < nmax)
+    x = invD*(b-Q*x_old); % Jacobi iteration
+    res = norm(x-x_old); % residual
+    err(i)=res;
+    i = i+1;
+    x_old = x;
+end
+iter = i;
+err = err(1:i);
+      </code>
+      </pre>
+  </body>
+</html>

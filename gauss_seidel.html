@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <pre>
+      <code>
+function [x,iter,err] = gauss_seidel(A,b,tol,nmax)
+% by Shelvean Kapita
+% Gauss-Seidel
+% A must be strictly diagonally dominant
+% nmax maximum number of iterations
+% tol tolerance
+i = 1;
+res = 1;
+n = size(A,1);
+x_old = zeros(n,1);
+x = x_old;
+invD = 1./diag(A);
+err = zeros(nmax,1);
+U = triu(A,1);
+L = tril(A,-1);
+while (res>tol)&&(i < nmax)
+    for j=1:n
+        x(j)= invD(j)*(b(j)-U(j,:)*x_old-L(j,1:j-1)*x(1:j-1));
+    end
+    res = norm(x-x_old);
+    x_old = x;
+    err(i) = res;
+    i = i+1;
+end
+iter = i;
+err = err(1:i);
+
+      </code>
+      </pre>
+  </body>
+</html>

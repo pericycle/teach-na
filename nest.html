@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <pre>
+      <code>
+function y = nest(c,x,b)
+% evaluate a polynomial using nested multiplication
+% c : vector of coefficients in Newton form
+% x : x values at which to evaluate
+% b : base points
+% output y: values of p(x)
+n = length(b);
+d = n-1; % degree of polynomial
+y = c(n);
+for i=d:-1:1
+    y = y.*(x-b(i))+c(i);
+end
+      </code>
+      </pre>
+  </body>
+</html>

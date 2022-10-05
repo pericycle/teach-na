@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <pre>
+      <code>
+function [r,iter] = newton(f,fp,x0,tol,nmax)
+%by Shelvean Kapita
+% f is the function
+% fp is the derivative of f
+% x0 is the initial iterate
+% tol is the tolerance
+% nmax is the maximum allowable number of iterations
+% example usage
+% f = @(x) x - cos(x);
+% fp = @(x) 1+sin(x);
+% x0 = 1;
+% tol = 1e-8;
+% nmax = 100;
+% [r,iter] = newton(f,fp,x0,tol,nmax);
+
+res = 1; % residual
+i = 1; % initialize count
+x = zeros(nmax,1); % initialize vector of iterates
+x(1) = x0; % initial guess
+while (res>tol)&&(i <nmax)
+    x(i+1) = x(i)-(f(x(i))/fp(x(i))); % Newton iterate
+    res = abs(x(i+1)-x(i));
+    i = i+1;
+end
+r = x(1:i);
+iter = i-1;
+
+
+      </code>
+      </pre>
+  </body>
+</html>

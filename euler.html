@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <pre>
+      <code>
+function [y,t] = euler_m(f,t0,y0,T,n)
+% by Shelvean Kapita
+% solve the ODE y' = f(t,y) by Euler's method
+% t0 = initial time
+% T = final time
+% n = number of time steps
+% f function of t and y
+h = (T-t0)/n; % time-step
+y = zeros(n+1,1);
+t = linspace(t0,T,n+1);
+y(1) =y0; % initial condition
+i = 1; % count
+while (i<=n)
+    y(i+1) = y(i)+h*f(t(i),y(i));
+    i = i+1;
+end
+
+
+      </code>
+      </pre>
+  </body>
+</html>

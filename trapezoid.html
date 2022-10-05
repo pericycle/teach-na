@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <pre>
+      <code>
+function q = trapezoid(f,a,b,n)
+% by Shelvean Kapita
+% trapezoidal rule
+% f is the function to be integrated
+% n number of sub-divisions
+% a - left end-point
+% b - right end-point
+h = (b-a)/n;
+q = 0.5*h*(f(a)+f(b)); % end-points
+for k=1:n-1 % middle-points
+    xk = a+k*h;
+    q = q + h*f(xk);
+end
+      </code>
+      </pre>
+  </body>
+</html>

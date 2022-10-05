@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <pre>
+      <code>
+function [r,iter] = fpi(g,x0,tol,nmax)
+% by Shelvean Kapita
+% fixed point iteration for x = g(x)
+% x0 initial guess
+% tol  tolerance
+% nmax  maximum allowable number of iterations
+% example usage
+% g = @(x) cos(x);
+% x0 = 1;
+% tol = 1e-8;
+% nmax = 100;
+% [r,iter] = fpi(g,x0,tol,nmax)
+r = zeros(nmax,1);
+r(1) = x0;
+i = 1;
+res = 1;
+while (i < nmax)&& (res > tol)
+    r(i+1)=g(r(i));
+    res = abs(r(i+1)-r(i));
+    i = i+1;
+end
+r = r(1:i-1);
+iter = i;
+      </code>
+      </pre>
+  </body>
+</html>
