@@ -11,28 +11,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Numerical Methods</title>
-    <script>
-    $(document).ready(function () {
 
-   // listen for clicking of the <a>
-   $('a').on('click', function (e) {
-      // don't let the <a> perform it's default action
-      e.preventDefault();
-
-      // hide all divs
-      $('div').hide();
-
-      // show the <div> which is after the <a> which you clicked
-      $(this).next('div').show();
-  });
-
-});
-</script>
 </head>
 
 <body>
     <h1>
-        <div id="header">HMTHCS212/HFM213 - Numerical Methods</div>
+        <div class="header">HMTHCS212/HFM213 - Numerical Methods</div>
     </h1>
     <div class="block">
         <h3>
@@ -77,7 +61,7 @@
         <span class="description-header"><h3><u>Description</u></h3></span>
         <p class="description-text">
             First course in numerical methods. Topics include: finding roots of nonlinear equations, polynomial interpolation,
-            solution of linear systems of equations, numerical differentiation and integration, and solution of initial value problems 
+            solution of linear systems of equations, numerical differentiation and integration, and solution of initial value problems
             for ordinary differential equations.
         </p>
     </div>
@@ -91,7 +75,7 @@
             <li>
                 A First Course in Numerical Methods, SIAM 2011, by Uri M. Ascher and Chen Grief.
             </li>
-            
+
             <li>
                 Numerical Mathematics & Computing, Cengage Learning, 7th edition 2012, Ward Cheney and David Kincaid.
             </li>
@@ -105,7 +89,7 @@
         <ul>
             <li>
               <a href="Numerical_Analysis_Syllabus.pdf">Syllabus</a>
-                
+
           </li>
     </ul>
   </div>
@@ -116,7 +100,7 @@
               <span class="item"> <a href="NA1.pdf">assignment 1</a>         </span>
               <span class="item"> <a href="HMTHCS212_Assignment1_solns.pdf">solutions</a> </span>
 
-                
+
           </li>
           <li>
               <span class="item"> <a href="NA2.pdf">assignment 2</a>         </span>
@@ -126,7 +110,7 @@
               <span class="item"> <a href="HMTHCS212_Assignment_3.pdf">assignment 3</a>         </span>
               <span class="item"> <a href="NA3_solns.pdf">solutions</a> </span>
 
-                
+
           </li>
     </ul>
   </div>
@@ -135,50 +119,66 @@
         <ul>
             <li>
               <a href="Final.pdf">Final</a>
-                
+
           </li>
     </ul>
-  </div> 
+  </div>
     <div class="description">
         <span class="description-header"><h3><u>MATLAB Codes</u></h3></span>
         <ul>
             <li>
-                <a href="#" style="background-color: #ccc; padding: 5px 10px;">bisection.m</a>
-                <div id="div1" style="background-color: #aaa; padding: 5px 10px; display:none; width:200px;">
-                 <pre>
-  <code>
-    function [r,iter] = bisection(f,a,b,tol,nmax)
-% by Shelvean Kapita, 2022
-% bisection algorithm for determining roots
-% example usage
-% f = @(x) x - cos(x);
-% a = 0;
-% b = 1;
-% tol = 1e-8;
-% nmax = 100;
-% [r,iter] = bisection(f,a,b,tol,nmax)
-
-iter = 1; % initialize count
-r = zeros(nmax,1); % initialize vector of iterates
-while ((b-a)/2>tol) && (iter < nmax)
-    c = (b+a)/2; % midpoint of [a,b]
-    r(iter) = c; % update iterate
-    if f(c)==0 % c is the solution!
-        break
-    elseif f(a)*f(c)<0
-        b = c;
-    else
-        a = c;
-    end
-    iter = iter + 1;
-end
-r = r(1:iter-1); % return iterates
-iter = iter-1;
-  </code>
-</pre>
-</div>
+                <a href="bisection.html">bisection</a>
 
             </li>
+            <li>
+              <a href="fpi.html">fixed point iteration</a>
+            </li>
+            <li>
+              <a href="newton.html">newton's method</a>
+            </li>
+            <li>
+              <a href="secant.html">secant method</a>
+            </li>
+            <li>
+              <a href="gauss_elim.html">gaussian elimination</a>
+            </li>
+            <li>
+              <a href="jacobi.html">jacobi iteration</a>
+            </li>
+            <li>
+              <a href="gauss_seidel.html">gauss seidel iteration</a>
+            </li>
+            <li>
+              <a href="newtondd.html">newton's divided differences</a>
+            </li>
+            <li>
+              <a href="nest.html">nested polynomial evaluation</a>
+            </li>
+            <li>
+              <a href="trapezoid.html">trapezoidal method</a>
+            </li>
+            <li>
+              <a href="simpson.html">simpson's method</a>
+            </li>
+            <li>
+              <a href="gauss_quad.html">gaussian quadrature</a>
+            </li>
+            <li>
+              <a href="gauleg.html">gauss points and weights</a>
+            </li>
+            <li>
+              <a href="euler.html">euler's method</a>
+            </li>
+            <li>
+              <a href="modified_euler.html">modified euler's method</a>
+            </li>
+            <li>
+              <a href="rk3.html">3rd order runge kutta</a>
+            </li>
+            <li>
+              <a href="rk4.html">4th order runge kutta</a>
+            </li>
         </ul>
+</div>
 </body>
 </html>
