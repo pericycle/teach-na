@@ -8,7 +8,7 @@
 }
 body {
     background-color: cornsilk;
-    font-size: 20px%
+    font-size: 16px%
 }
 
 li{
@@ -27,7 +27,7 @@ li{
 }
 
 @media only screen and (min-width: 768px) {
-    .class-info-head {
+    .class-infoead {
         padding-left: 40%;
     }
 }
@@ -38,11 +38,11 @@ li{
 }
 
 .classroom-info {
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .lecturer-info {
-    font-size: 20px%;
+    font-size: 16px%;
 }
 
 .description-header {
