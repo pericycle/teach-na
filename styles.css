@@ -8,6 +8,7 @@
 }
 body {
     background-color: cornsilk;
+    font-size: 100%
 }
 
 li{
@@ -37,11 +38,11 @@ li{
 }
 
 .classroom-info {
-    font-size: medium;
+    font-size: 100%;
 }
 
 .lecturer-info {
-    font-size: medium;
+    font-size: 100%;
 }
 
 .description-header {
